@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: linusfenixlistens-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: BACKEND_PORT
+        value: 5000
+      - key: BACKEND_URL
+        value: http://localhost:5000
+      - key: FRONTEND_PORT
+        value: 3000
+      - key: FRONTEND_URL
+        value: http://localhost:3000
+    plan: free
