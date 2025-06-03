@@ -5,11 +5,11 @@ const { spawn } = require("child_process"); //spawn is used to run Python comman
 const express = require("express");
 const app = express();
 
-const BACKEND_PORT = process.env.BACKEND_PORT || 5000;
-const BACKEND_URL = process.env.BACKEND_URL;
+const BACKEND_PORT = process.env.NEXT_PUBLIC_BACKEND_PORT || 5000;
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-const FRONTEND_PORT = process.env.FRONTEND_PORT || 3000;
-const FRONTEND_URL = process.env.FRONTEND_URL;
+const FRONTEND_PORT = process.env.NEXT_PUBLIC_FRONTEND_PORT || 3000;
+const FRONTEND_URL = process.env.NEXT_PUBLIC_FRONTEND_URL;
 
 app.use(
   cors({
@@ -67,5 +67,5 @@ app.get("/stream-audio", async (req, res) => {
 });
 
 app.listen(BACKEND_PORT, () => {
-  console.log(`Server running on ${BACKEND_URL}${BACKEND_PORT}`);
+  console.log(`Server running on ${BACKEND_URL}`);
 });
