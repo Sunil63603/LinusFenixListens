@@ -36,8 +36,9 @@ app.get("/stream-audio", async (req, res) => {
   res.setHeader("Transfer-Encoding", "chunked");
 
   //Run yt-dlp to extract best audio and output to stdout.
-  const ytdlp = spawn("npx", [
-    "yt-dlp",
+  const path = require("path");
+
+  const ytdlp = spawn(path.join(__dirname, "yt-dlp"), [
     "-f",
     "bestaudio",
     "-o",
